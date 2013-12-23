@@ -1,4 +1,8 @@
+<%= render 'header' %>
+
 <h1>Index</h1>
+<ol>
 <% @entries.each do |entry| %>
-  <p><a href="/entries/<%= entry.id %>"><%= entry.title %></a></p>
+  <li><a href="/entries/<%= entry.id %>"><%= entry.title %></a> (<%= entry.prettytime %>)</li>
 <% end %>
+</ol>
