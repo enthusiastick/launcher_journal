@@ -1,4 +1,4 @@
-It's empty!
+<h1>Index</h1>
 <% @entries.each do |entry| %>
-  <p><%= entry.title %></p>
+  <p><a href="/entries/<%= entry.id %>"><%= entry.title %></a></p>
 <% end %>

@@ -1,7 +1,7 @@
 class EntriesController < ActionController::Base
 
   def index
-    @entries = Entry.all
+    @entries = Entry.all.order(:created_at).reverse_order
   end
 
   def new
