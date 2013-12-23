@@ -11,7 +11,11 @@ class EntriesController < ActionController::Base
   def create
     @entry = Entry.new(entry_params)
     @entry.save
-    redirect_to @entry
+    if @entry.errors.any?
+      render action: 'new'
+    else
+      redirect_to @entry
+    end
   end
 
   def entry_params
