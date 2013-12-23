@@ -6,4 +6,7 @@ describe Entry do
   it { should have_valid(:title).when('foo') }
   it { should_not have_valid(:title).when(*blank_values) }
 
+  it { should have_valid(:body).when('stuff') }
+  it { should_not have_valid(:body).when(*blank_values) }
+
 end
