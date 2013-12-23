@@ -9,4 +9,6 @@ describe Entry do
   it { should have_valid(:body).when('stuff') }
   it { should_not have_valid(:body).when(*blank_values) }
 
+  it { should belong_to(:category) }
+
 end
