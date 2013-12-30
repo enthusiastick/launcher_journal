@@ -23,4 +23,10 @@ class CategoriesController < ActionController::Base
     params.require(:category).permit(:name)
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destory
+    render action: 'index'
+  end
+
 end

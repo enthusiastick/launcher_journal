@@ -1,6 +1,8 @@
 <h1>Categories</h1>
 <ol>
 <% @categories.each do |cat| %>
-  <li><%= cat.name %></li>
+  <li><%= cat.name %> <a href="categories/<%= cat.id %>" data-method="delete" rel="nofollow">Delete</a></li>
 <% end %>
 </ol>
+
+<%= link_to 'New Category', new_category_path %>
