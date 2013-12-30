@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:title, :body)
+    params.require(:entry).permit(:title, :body, :category_id)
   end
 
   def show

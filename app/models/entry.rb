@@ -7,4 +7,12 @@ class Entry < ActiveRecord::Base
     self.created_at.strftime("%B %e @ %l:%M %p")
   end
 
+  def catted
+    if self.category == nil
+      'Uncategorized'
+     else
+      self.category.name
+    end
+  end
+
 end
