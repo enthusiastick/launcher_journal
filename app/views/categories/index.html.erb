@@ -1,8 +1,10 @@
+<%= render '/entries/header' %>
+
 <h1>Categories</h1>
+<%= link_to 'New Category', new_category_path %>
 <ol>
 <% @categories.each do |cat| %>
-  <li><%= cat.name %> <a href="categories/<%= cat.id %>" data-method="delete" rel="nofollow">Delete</a></li>
+  <li><%= cat.name %> <%= link_to 'Delete', cat, method: :delete, data: { confirm: 'Warning! This cannot be undone! Proceed?' } %></li>
 <% end %>
 </ol>
 
-<%= link_to 'New Category', new_category_path %>

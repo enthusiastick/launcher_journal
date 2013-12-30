@@ -1,5 +1,4 @@
-class CategoriesController < ActionController::Base
-
+class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
@@ -9,7 +8,7 @@ class CategoriesController < ActionController::Base
   end
 
   def create
-     @category = Category.new(category_params)
+    @category = Category.new(category_params)
     @category.save
     if @category.errors.any?
       render action: 'new'
@@ -24,9 +23,8 @@ class CategoriesController < ActionController::Base
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    @category.destory
-    render action: 'index'
+    Category.find(params[:id]).destroy
+    redirect_to :action => 'index'
   end
 
 end
